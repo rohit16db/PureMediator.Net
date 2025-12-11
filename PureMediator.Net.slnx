@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src/PureMediator.Net/PureMediator.Net.csproj" />
+  <Project Path="tests/PureMediator.Net.Tests/PureMediator.Net.Tests.csproj" />
+</Solution>

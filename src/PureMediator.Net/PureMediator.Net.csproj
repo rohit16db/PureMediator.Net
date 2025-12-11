@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <ImplicitUsings>enable</ImplicitUsings>
+	<Title>PureMediator.Net</Title>
+    <Description>PureMediator.Net - lightweight mediator with pipeline behaviors and validation</Description>
+    <PackageId>PureMediator.Net</PackageId>
+	<PackageVersion>1.0.0</PackageVersion>
+    <Authors>Rohit Pandit</Authors>
+    <Company>Self</Company>
+    <PackageTags>mediator cqrs pipeline validation</PackageTags>
+    <RepositoryUrl>https://github.com/rohit16db/PureMediator.Net</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Scrutor" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
+  </ItemGroup>
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath="" />
+	</ItemGroup>
+</Project>
