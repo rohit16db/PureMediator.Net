@@ -140,17 +140,7 @@ services.AddValidation();
 
 If validation fails → request handler will NOT execute.
 
-📂 Recommended Project Structure
-src/
-├── PureMediator.Net/
-│   ├── Abstractions/
-│   ├── Behaviors/
-│   ├── Handlers/
-│   ├── Validators/
-│   ├── Extensions/
-│   ├── PureMediator.Net.csproj
-│   ├── README.md
-│   ├── LICENSE
+
 
 🤝 Contributing
 
