@@ -1,4 +1,4 @@
-using OpenMediator.Abstractions.Requests;
+using PureMediator.Net.Abstractions.Requests;
 
 namespace ConsoleSample.Queries;
 

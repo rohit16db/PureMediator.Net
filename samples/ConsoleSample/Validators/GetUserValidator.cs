@@ -1,5 +1,6 @@
-using OpenMediator.Abstractions.Pipeline;
+
 using ConsoleSample.Queries;
+using PureMediator.Net.Abstractions.Pipeline;
 
 namespace ConsoleSample.Validators;
 

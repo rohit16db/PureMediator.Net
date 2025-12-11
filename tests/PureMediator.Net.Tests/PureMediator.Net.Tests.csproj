@@ -7,6 +7,9 @@
 
   <ItemGroup>
     <PackageReference Include="xunit" Version="2.6.2" />
-    <ProjectReference Include="..\..\src\OpenMediator\PureMediator.Net.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\PureMediator.Net\PureMediator.Net.csproj" />
   </ItemGroup>
 </Project>

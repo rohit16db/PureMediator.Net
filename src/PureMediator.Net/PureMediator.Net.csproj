@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -8,13 +8,15 @@
 	<Title>PureMediator.Net</Title>
     <Description>PureMediator.Net - lightweight mediator with pipeline behaviors and validation</Description>
     <PackageId>PureMediator.Net</PackageId>
-	<PackageVersion>1.0.0</PackageVersion>
+	<PackageVersion>1.0.2</PackageVersion>
     <Authors>Rohit Pandit</Authors>
     <Company>Self</Company>
     <PackageTags>mediator cqrs pipeline validation</PackageTags>
     <RepositoryUrl>https://github.com/rohit16db/PureMediator.Net</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<PackageProjectUrl>https://github.com/rohit16db/PureMediator.Net</PackageProjectUrl>
+	<AssemblyVersion>1.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,6 +24,9 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
   </ItemGroup>
 	<ItemGroup>
-		<None Include="README.md" Pack="true" PackagePath="" />
+		<None Include="..\..\README.md">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
+		</None>		
 	</ItemGroup>
 </Project>

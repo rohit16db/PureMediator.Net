@@ -26,7 +26,7 @@ public static class ServiceCollectionExtensions
     /// <param name="markerTypes">An array of types used to identify assemblies for scanning and registration of handlers and validators. Each
     /// type's assembly will be scanned for relevant implementations.</param>
     /// <returns>The same <see cref="IServiceCollection"/> instance provided in <paramref name="services"/>, allowing for method chaining.</returns>
-    public static IServiceCollection AddOpenMediator(this IServiceCollection services, params Type[] markerTypes)
+    public static IServiceCollection AddPureMediator(this IServiceCollection services, params Type[] markerTypes)
     {
         services.AddSingleton<PureMediator.Net.Abstractions.IMediator, PureMediator.Net.Core.Mediator>();
 
@@ -45,28 +45,22 @@ public static class ServiceCollectionExtensions
 
         return services;
     }
-   
+
     /// <summary>
-    /// Registers a pipeline behavior of type <typeparamref name="TBehavior"/> in the service collection.
+    /// Registers a pipeline behavior of the specified type in the service collection.
     /// </summary>
     /// <remarks>
-    /// This method adds the specified pipeline behavior as a transient service for all <see cref="PureMediator.Net.Abstractions.Pipeline.IPipelineBehavior{TRequest, TResponse}"/>
-    /// implementations. Pipeline behaviors are executed as part of the request handling pipeline, allowing for cross-cutting
-    /// concerns such as logging, validation, or performance monitoring to be injected into the mediator's request processing.
+    /// This method adds the provided <paramref name="behaviorType"/> as a transient implementation of <see cref="IPipelineBehavior{TRequest, TResponse}"/>.
+    /// Pipeline behaviors allow for cross-cutting concerns (such as logging, validation, or performance monitoring) to be executed as part of the request handling pipeline.
     /// </remarks>
-    /// <typeparam name="TBehavior">
-    /// The type of the pipeline behavior to register. Must implement <see cref="PureMediator.Net.Abstractions.Pipeline.IPipelineBehavior{TRequest, TResponse}"/>.
-    /// </typeparam>
-    /// <param name="services">
-    /// The <see cref="IServiceCollection"/> to which the pipeline behavior will be added. Must not be null.
-    /// </param>
-    /// <returns>
-    /// The same <see cref="IServiceCollection"/> instance provided in <paramref name="services"/>, allowing for method chaining.
-    /// </returns>
-    public static IServiceCollection AddPipelineBehavior<TBehavior>(this IServiceCollection services)
-        where TBehavior : class
+    /// <param name="services">The service collection to which the pipeline behavior will be added. Must not be null.</param>
+    /// <param name="behaviorType">The type of the pipeline behavior to register. Must implement <see cref="IPipelineBehavior{TRequest, TResponse}"/>.</param>
+    /// <returns>The same <see cref="IServiceCollection"/> instance provided in <paramref name="services"/>, allowing for method chaining.</returns>
+    public static IServiceCollection AddPipelineBehavior(
+        this IServiceCollection services,
+        Type behaviorType)
     {
-        services.AddTransient(typeof(PureMediator.Net.Abstractions.Pipeline.IPipelineBehavior<,>), typeof(TBehavior));
+        services.AddTransient(typeof(IPipelineBehavior<,>), behaviorType);
         return services;
     }
 }
