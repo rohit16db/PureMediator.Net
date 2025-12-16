@@ -1,7 +1,11 @@
-namespace PureMediator.Net.Abstractions.Requests;
+using System.Threading;
+using System.Threading.Tasks;
 
-/// <summary>
-/// Represents a notification that can be published through the mediator.
-/// Implement this interface to define a notification type for use with the mediator.
-/// </summary>
-public interface INotification { }
+namespace PureMediator.Net.Abstractions.Requests
+{
+    /// <summary>
+    /// Represents a notification that can be published through the mediator.
+    /// Implement this interface to define a notification type for use with the mediator.
+    /// </summary>
+    public interface INotification { }
+}
